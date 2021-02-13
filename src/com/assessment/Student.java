@@ -1,6 +1,7 @@
 package com.assessment;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Student extends Person{
     private String username;
@@ -23,6 +24,14 @@ public class Student extends Person{
 
     public HashMap<String, Double> getGrades() {
         return grades;
+    }
+
+    public void printGrades (Student s){
+
+        for (Map.Entry<String, Double> entry : getGrades().entrySet()) {
+            System.out.println(entry.getKey()+" : "+entry.getValue());
+        }
+
     }
 
 

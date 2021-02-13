@@ -7,7 +7,7 @@ public class Main {
 
         Driver d = new Driver();
 
-        d.Run();
+        d.run();
 
 
 
