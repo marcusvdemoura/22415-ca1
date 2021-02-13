@@ -28,6 +28,9 @@ public class Student extends Person{
 
     public void printGrades (Student s){
 
+        System.out.println(s.getFirst_name() + " " + s.getLast_name() + " grades:");
+        System.out.println("----------------------");
+
         for (Map.Entry<String, Double> entry : getGrades().entrySet()) {
             System.out.println(entry.getKey()+" : "+entry.getValue());
         }
