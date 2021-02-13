@@ -4,6 +4,7 @@ public class Administrador extends Person{
 
     private String username = "admin";
     private String password = "adminpass";
+    public College college = new College()
 
     public Administrador(String last_name, String first_name) {
         super(last_name, first_name);
@@ -16,4 +17,8 @@ public class Administrador extends Person{
     public String getPassword() {
         return password;
     }
+
+
+
+
 }
