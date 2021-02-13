@@ -34,14 +34,14 @@ public class Administrador extends Person{
         college = new College();
     }
 
-    void createTutor (String last_name, String first_name, String username, String password, String subject) {
+    void createTutor (String last_name, String first_name, String password, String subject, int tutorId) {
 
-        Tutor t = new Tutor(last_name, first_name, username, password, subject);
+        Tutor t = new Tutor(last_name, first_name, password, subject, tutorId);
         college.addTutors(t);
 
     }
 
-    void createStudent (String last_name, String first_name, String username, String password, int class_tobe_added, int serialNumber){
+    void createStudent (String last_name, String first_name, int username, String password, int class_tobe_added){
 
         Student s = new Student(last_name, first_name, username, password);
         college.getList_classes().get(class_tobe_added).add_student_to_class(s);

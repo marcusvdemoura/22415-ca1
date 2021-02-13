@@ -5,15 +5,16 @@ public class Tutor extends Person {
     private String username;
     private String password;
     private String subject;
+    private int tutorId;
 
 
 
 
-    public Tutor(String last_name, String first_name, String username, String password, String subject) {
+    public Tutor(String last_name, String first_name, String password, String subject, int tutorId) {
         super(last_name, first_name);
-        this.username = username;
         this.password = password;
         this.subject = subject;
+        this.tutorId = tutorId;
     }
 
     public String getUsername() {
@@ -26,6 +27,10 @@ public class Tutor extends Person {
 
     public String getSubject() {
         return subject;
+    }
+
+    public int getTutorId() {
+        return tutorId;
     }
 
     public void putGrade(Student student, Double grade){
