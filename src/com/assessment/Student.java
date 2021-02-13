@@ -1,8 +1,11 @@
 package com.assessment;
 
+import java.util.HashMap;
+
 public class Student extends Person{
     private String username;
     private String password;
+    private HashMap <String, Double> grades = new HashMap<>();
 
     public Student(String last_name, String first_name, String username, String password) {
         super(last_name, first_name);
@@ -17,4 +20,10 @@ public class Student extends Person{
     public String getPassword() {
         return password;
     }
+
+    public HashMap<String, Double> getGrades() {
+        return grades;
+    }
+
+
 }
