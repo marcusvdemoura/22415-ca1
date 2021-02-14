@@ -22,7 +22,9 @@ public class Driver {
         Tutor first_tutor = a.getTutor_list().get(0);
         Tutor second_tutor = a.getTutor_list().get(1);
 
-        // -> adm creates a class for the students
+        // -> adm creates a class for the students (the school_classes created are added to an ArrayList of classes and can be retrieved by the get function
+        // in college the class)
+
         adm.createClass(adm.getCollege().getTutor_list().get(0));
         Classes first_class = a.getList_classes().get(0);
         /*---------------------------*/
@@ -32,9 +34,9 @@ public class Driver {
 
         //-> in the class will be added a set of Students
 
-        adm.createStudent("Moura", "Marcus", 0, "aabbcc", 0);
-        adm.createStudent("Silva", "Michele", 1, "abcdefg123", 0);
-        adm.createStudent("Mubasher", "Khan", 2, "123456", 0);
+        adm.createStudent("Moura", "Marcus", "mar123", "aabbcc", 0,0);
+        adm.createStudent("Silva", "Michele", "mich123", "abcdefg123", 0,1);
+        adm.createStudent("Mubasher", "Khan", "kah123", "123456", 0,2);
 
         // -> the tutor can add grades
 
@@ -50,9 +52,9 @@ public class Driver {
         /*---------------------------*/
 
         ArrayList<Student> student_list2 = a.getList_classes().get(1).getList_Students();
-        adm.createStudent("Silveira", "Licia", 0, "aabbcc", 1);
-        adm.createStudent("Moura", "Celio", 1, "abcdefg123", 1);
-        adm.createStudent("Celmars", "Janis", 2, "123456", 1);
+        adm.createStudent("Silveira", "Licia", "lic122", "aabbcc", 1, 0);
+        adm.createStudent("Moura", "Celio", "cel122", "abcdefg123", 1,1);
+        adm.createStudent("Celmars", "Janis", "jan122", "123456", 1,2);
 
         first_tutor.putGrade(student_list2.get(0), 1.0);
         second_tutor.putGrade(student_list2.get(0), 9.0);

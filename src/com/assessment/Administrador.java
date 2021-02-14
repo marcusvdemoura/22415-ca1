@@ -41,9 +41,9 @@ public class Administrador extends Person{
 
     }
 
-    void createStudent (String last_name, String first_name, int username, String password, int class_tobe_added){
+    void createStudent (String last_name, String first_name, String username, String password, int class_tobe_added, int id_key){
 
-        Student s = new Student(last_name, first_name, username, password);
+        Student s = new Student(last_name, first_name, username, password, id_key);
         college.getList_classes().get(class_tobe_added).add_student_to_class(s);
 
     }

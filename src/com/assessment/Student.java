@@ -4,17 +4,23 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Student extends Person{
-    private int username;
+    private String username;
     private String password;
+    private int id_key;
     private HashMap <String, Double> grades = new HashMap<>();
 
-    public Student(String last_name, String first_name, int username, String password) {
+    public Student(String last_name, String first_name, String username, String password, int id_key) {
         super(last_name, first_name);
         this.username = username;
         this.password = password;
+        this.id_key = id_key;
     }
 
-    public int getUsername() {
+    public int getId_key() {
+        return id_key;
+    }
+
+    public String getUsername() {
         return username;
     }
 
