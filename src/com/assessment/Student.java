@@ -1,47 +1,75 @@
 package com.assessment;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Student extends Person{
+
     private String username;
     private String password;
-    private int id_key;
-    private HashMap <String, Double> grades = new HashMap<>();
+    private HashMap<String, Double> grades = new HashMap<String, Double>();
+    private ArrayList<BranchClass> timetable = new ArrayList<BranchClass>();
 
-    public Student(String last_name, String first_name, String username, String password, int id_key) {
-        super(last_name, first_name);
-        this.username = username;
+
+
+    public Student (String first_name, String last_name, String password, String username) {
+        super (first_name, last_name);
         this.password = password;
-        this.id_key = id_key;
+        this.username = username;
     }
 
-    public int getId_key() {
-        return id_key;
-    }
+
 
     public String getUsername() {
         return username;
     }
 
+
+
     public String getPassword() {
         return password;
     }
+
+
 
     public HashMap<String, Double> getGrades() {
         return grades;
     }
 
-    public void printGrades (Student s){
 
-        System.out.println(s.getFirst_name() + " " + s.getLast_name() + " grades:");
+
+    public ArrayList<BranchClass> getTimetable() {
+        return timetable;
+    }
+
+    void print_grades() {
+
+
+        System.out.println(getFirst_name() + " " + getLast_name() + " grades:");
         System.out.println("----------------------");
 
         for (Map.Entry<String, Double> entry : getGrades().entrySet()) {
             System.out.println(entry.getKey()+" : "+entry.getValue());
         }
 
+
     }
+
+    void print_timetable () {
+
+
+        System.out.println(getFirst_name() + " " + getLast_name() + " Timetable:");
+        System.out.println("----------------------\n\n");
+
+        for (int i = 0; i < getTimetable().size(); i++) {
+            System.out.println("Tutor: " + getTimetable().get(i).getTutor().getFirst_name() + " " + getTimetable().get(i).getTutor().getLast_name());
+            System.out.println("Subject: " + getTimetable().get(i).getTutor().getSubject());
+            System.out.println("----------------------");
+        }
+
+    }
+
 
 
 }

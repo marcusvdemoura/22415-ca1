@@ -2,36 +2,33 @@ package com.assessment;
 
 public class Tutor extends Person {
 
-    private String username;
     private String password;
     private String subject;
-    private int tutorId;
 
 
 
 
-    public Tutor(String last_name, String first_name, String password, String subject, int tutorId) {
-        super(last_name, first_name);
+    public Tutor(String first_name, String last_name, String password, String subject) {
+        super(first_name, last_name);
         this.password = password;
         this.subject = subject;
-        this.tutorId = tutorId;
+
     }
 
-    public String getUsername() {
-        return username;
-    }
+
+
 
     public String getPassword() {
         return password;
     }
 
+
+
+
     public String getSubject() {
         return subject;
     }
 
-    public int getTutorId() {
-        return tutorId;
-    }
 
     public void putGrade(Student student, Double grade){
 
@@ -40,4 +37,6 @@ public class Tutor extends Person {
             student.getGrades().put(getSubject(), grade);}
 
     }
+
 }
+
