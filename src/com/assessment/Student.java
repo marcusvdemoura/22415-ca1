@@ -9,12 +9,12 @@ public class Student extends Person{
     private String username;
     private String password;
     private HashMap<String, Double> grades = new HashMap<String, Double>();
-    private ArrayList<BranchClass> timetable = new ArrayList<BranchClass>();
+    private ArrayList<Courses> timetable = new ArrayList<Courses>();
 
 
 
-    public Student (String first_name, String last_name, String password, String username) {
-        super (first_name, last_name);
+    public Student (String first_name, String last_name, String emailAddress, String password, String username) {
+        super (first_name, last_name, emailAddress);
         this.password = password;
         this.username = username;
     }
@@ -39,7 +39,7 @@ public class Student extends Person{
 
 
 
-    public ArrayList<BranchClass> getTimetable() {
+    public ArrayList<Courses> getTimetable() {
         return timetable;
     }
 

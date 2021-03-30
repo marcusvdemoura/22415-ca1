@@ -7,11 +7,11 @@ public class Admin extends Person implements AdminTools{
     private Student student;
     private Tutor tutor;
     private CollegeBranch collegeBranch;
-    private BranchClass branchClass;
+    private Courses courses;
 
 
-    public Admin(String first_name, String second_name, String password) {
-        super(first_name, second_name);
+    public Admin(String first_name, String second_name, String emailAddress, String password) {
+        super(first_name, second_name, emailAddress);
         this.password = password;
     }
 
@@ -35,26 +35,26 @@ public class Admin extends Person implements AdminTools{
 
 
     @Override
-    public Student create_students (String first_name, String last_name, String password, String username) {
+    public Student create_students (String first_name, String last_name, String emailAddress, String password, String username) {
 
-        student = new Student(first_name, last_name, password, username);
+        student = new Student(first_name, last_name, emailAddress, password, username);
         return student;
 
     }
 
 
     @Override
-    public Tutor create_tutor(String first_name, String last_name, String password, String subject) {
+    public Tutor create_tutor(String first_name, String last_name, String emailAddress, String password, String subject) {
 
-        tutor = new Tutor(first_name, last_name, password, subject);
+        tutor = new Tutor(first_name, last_name, emailAddress, password, subject);
         return tutor;
     }
 
     @Override
-    public BranchClass create_branch_class(CollegeBranch collegeBranch,Tutor tutor) {
+    public Courses create_branch_class(CollegeBranch collegeBranch, Tutor tutor) {
 
-        branchClass = new BranchClass(collegeBranch, tutor);
-        return branchClass;
+        courses = new Courses(collegeBranch, tutor);
+        return courses;
 
     }
 
@@ -62,13 +62,13 @@ public class Admin extends Person implements AdminTools{
 
 
     @Override
-    public void add_student_to_class(Student student, CollegeBranch collegeBranch, BranchClass branchClass) {
+    public void add_student_to_class(Student student, CollegeBranch collegeBranch, Courses courses) {
 
 
-        if (branchClass.getCollegeBranch().getUnit().equalsIgnoreCase(branchClass.getCollegeBranch().getUnit())) {
-            student.getTimetable().add(branchClass);
+        if (courses.getCollegeBranch().getUnit().equalsIgnoreCase(courses.getCollegeBranch().getUnit())) {
+            student.getTimetable().add(courses);
 
-            branchClass.getList_of_students().add(student);
+            courses.getList_of_students().add(student);
         } else {
             System.out.println("ERROR - THE UNIT DOESN'T HAVE THIS CLASS");
         }

@@ -1,16 +1,18 @@
 package com.assessment;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
-public class BranchClass {
+public class Courses {
 
 
     private Tutor tutor;
     private ArrayList<Student> list_of_students = new ArrayList<Student>();
+    private HashMap<Student, Double[]> studentsGrades = new HashMap<Student, Double[]>();
     private CollegeBranch collegeBranch;
 
 
-    public BranchClass(CollegeBranch collegeBranch, Tutor tutor) {
+    public Courses(CollegeBranch collegeBranch, Tutor tutor) {
         this.tutor = tutor;
         this.collegeBranch = collegeBranch;
 

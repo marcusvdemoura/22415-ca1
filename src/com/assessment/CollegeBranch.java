@@ -6,7 +6,8 @@ public class CollegeBranch {
 
     private String unit;
     private String address;
-    private ArrayList<BranchClass> listOfClasses = new ArrayList<BranchClass>();
+    private ArrayList<Courses> listOfClasses = new ArrayList<Courses>();
+    private ArrayList<Tutor> listOfTutors = new ArrayList<>();
 
     public CollegeBranch(String unit, String address) {
         super();
@@ -22,7 +23,7 @@ public class CollegeBranch {
         return address;
     }
 
-    public ArrayList<BranchClass> getListOfClasses() {
+    public ArrayList<Courses> getListOfClasses() {
         return listOfClasses;
     }
 

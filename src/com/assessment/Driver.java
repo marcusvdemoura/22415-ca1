@@ -7,14 +7,11 @@ public class Driver {
 
     }
 
-
-
-
     public void run() {
 
         // --> Create Administrator
 
-        Admin administrator = new Admin("One", "Above all", "abc123");
+        Admin administrator = new Admin("One", "Above all","abcd@efgh.com", "abc123");
 
         // --> Create college branch
 
@@ -23,21 +20,23 @@ public class Driver {
 
 
         // --> Create Student
-        Student student1 = administrator.create_students("Marcus", "Moura", "abcd1234", "marvin");
+        Student student1 = administrator.create_students("Marcus", "Moura", "abcd@efgh.com","abcd1234", "marvin");
 
 
         // --> Create Tutor
 
-        Tutor tutor1 = administrator.create_tutor("John", "Rowley", "tutorPass", "Programming");
-        Tutor tutor2 = administrator.create_tutor("Annette", "Forster", "tutor2Pass", "Maths");
-        Tutor tutor3 = administrator.create_tutor("Wenhao", "Fu", "tutor3Pass", "Database");
+        Tutor tutor1 = administrator.create_tutor("John", "Rowley","abcd@efgh.com", "tutorPass", "Programming");
+        Tutor tutor2 = administrator.create_tutor("Annette", "Forster", "abcd@efgh.com","tutor2Pass", "Maths");
+        Tutor tutor3 = administrator.create_tutor("Wenhao", "Fu", "abcd@efgh.com","tutor3Pass", "Database");
 
 
         // --> Create Classes
 
-        BranchClass firstClass = administrator.create_branch_class(cb1, tutor1);
-        BranchClass secondClass = administrator.create_branch_class(cb1, tutor2);
-        BranchClass thirdClass = administrator.create_branch_class(cb1, tutor3);
+        Courses firstClass = administrator.create_branch_class(cb1, tutor1);
+        Courses secondClass = administrator.create_branch_class(cb1, tutor2);
+        Courses thirdClass = administrator.create_branch_class(cb1, tutor3);
+
+
 
         // --> Add student to classes
 
@@ -51,14 +50,14 @@ public class Driver {
         tutor2.putGrade(student1, 9.00);
         tutor3.putGrade(student1, 8.0);
 
-        // --> Student prints grades
+//         --> Student prints grades
 
-        //student1.print_grades();
+        student1.print_grades();
 
         // --> Student prints timetable
 
 
-        student1.print_timetable();
+//        student1.print_timetable();
 
 
 
